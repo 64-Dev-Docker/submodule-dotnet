@@ -1,4 +1,4 @@
-# Rust
+# Dotnet
 
 This is intended to be used as a git sub-module. 
 
@@ -12,7 +12,7 @@ Then clone and update the .devcontainer submodule.
 
 ```bash
 cd {root project}
-git submodule add https://github.com/waltiam/submodule-rust.git .devcontainer
+git submodule add https://github.com/waltiam/submodule-dotnet.git .devcontainer
 git submodule init
 git submodule update
 ```
@@ -33,7 +33,7 @@ More information:
 - [Atlassian Intro](https://www.atlassian.com/git/tutorials/git-submodule)
 - [Git Details](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
-The _template-rust_ has this sub-module already inserted.
+The _template-dotnet_ has this sub-module already inserted.
 
 If you make changes to this submodule remember to add and commit from the `.devcontainer` folder.
 
