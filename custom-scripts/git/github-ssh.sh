@@ -7,7 +7,7 @@ if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
     USERNAME=""
     POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
     for CURRENT_USER in ${POSSIBLE_USERS[@]}; do
-        if id -u ${CURRENT_USER} >/dev/null 2>&1; then
+        if id -u ${CURRENT_USER} > /dev/null 2>&1; then
             USERNAME=${CURRENT_USER}
             break
         fi
@@ -22,18 +22,31 @@ elif [ "${USERNAME}" = "none" ]; then
 fi
 
 # ** Shell customization section **
-if [ "${USERNAME}" = "root" ]; then
+if [ "${USERNAME}" = "root" ]; then 
     USER_RC_PATH="/root"
 else
     USER_RC_PATH="/home/${USERNAME}"
 fi
 
-# we want the 'powerline' theme
-sed -i 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/g' ${USER_RC_PATH}/.zshrc
 
-# we want VI on the shell cli
-echo '# setting VI mode on the terminal 2021-01-30::wjs' >>${USER_RC_PATH}/.zshrc
-echo 'set -o vi' >>${USER_RC_PATH}/.zshrc
+# My logic
+SSH_AGENT="$(cat \
+<<EOF
 
-# we want git to use nvim
-git config --global core.editor "nvim"
+# configuring the ssh-agent to use with github
+if [ -z "\$SSH_AUTH_SOCK" ]; then
+   # Check for a currently running instance of the agent
+   RUNNING_AGENT="\`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'\`"
+   if [ "\$RUNNING_AGENT" = "0" ]; then
+        # Launch a new instance of the agent
+        ssh-agent -s &> \$HOME/.ssh/ssh-agent
+   fi
+   eval \`cat \$HOME/.ssh/ssh-agent\`
+fi
+EOF
+)"
+
+# cp -r /tmp/library-scripts/ssh ${USER_RC_PATH}/.ssh/
+
+eval "$(ssh-agent -s)"
+echo "${SSH_AGENT}" >> ${USER_RC_PATH}/.bashrc
