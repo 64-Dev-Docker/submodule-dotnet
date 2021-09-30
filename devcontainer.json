@@ -29,6 +29,7 @@
 		"github.vscode-pull-request-github",
 		"eamodio.gitlens",
 		"hoovercj.vscode-power-mode",
+		"vtrois.gitmoji-vscode",
 		// dotnet
 		"ms-dotnettools.csharp"
 	],
