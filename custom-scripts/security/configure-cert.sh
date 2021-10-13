@@ -15,5 +15,5 @@ git config --global tag.gpgSign true
 git config --global url."git@github.com:".insteadOf "https://github.com/"
 
 # gah - silly terminal
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 gpgconf --kill gpg-agent
