@@ -31,7 +31,9 @@
 		"hoovercj.vscode-power-mode",
 		"vtrois.gitmoji-vscode",
 		// dotnet
-		"ms-dotnettools.csharp"
+		"ms-dotnettools.csharp",
+		"ryanluker.vscode-coverage-gutters",
+		"formulahendry.dotnet-test-explorer"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
