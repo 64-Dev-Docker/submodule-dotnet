@@ -31,6 +31,7 @@
 		"hoovercj.vscode-power-mode",
 		"vtrois.gitmoji-vscode",
 		// dotnet
+		"formulahendry.dotnet-test-explorer",
 		"ms-dotnettools.csharp"
 	],
 
