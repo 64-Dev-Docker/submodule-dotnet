@@ -33,7 +33,8 @@
 		// dotnet
 		"formulahendry.dotnet-test-explorer",
 		"ms-dotnettools.csharp",
-		"ryanluker.vscode-coverage-gutters"
+		"ryanluker.vscode-coverage-gutters",
+		"cschlosser.doxdocgen"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
