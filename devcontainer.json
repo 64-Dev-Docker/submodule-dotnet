@@ -30,6 +30,8 @@
 		"eamodio.gitlens",
 		"hoovercj.vscode-power-mode",
 		"vtrois.gitmoji-vscode",
+		"ms-vsliveshare.vsliveshare-pack",
+		"esbenp.prettier-vscode",
 		// dotnet
 		"formulahendry.dotnet-test-explorer",
 		"ms-dotnettools.csharp",
@@ -68,7 +70,7 @@
 	"mounts": [
 		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
 		"source=${localEnv:HOME}/.gnupg,target=/home/vscode/.gnupg,type=bind,consistency=cached",
-	]
+	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "dotnet restore",
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
