@@ -5,6 +5,8 @@
 # git config --global gpg.program $(which gpgsm)
 # git config --global gpg.format x509
 
+git config --global user.name $(gpg --list-secret-keys | perl -n -e'/\[ultimate\]\s*(.*)\s*</ && print $1')
+git config --global user.email $(gpg --list-secret-keys | perl -n -e'/<(.*)>/ && print $1')
 git config --global user.signingkey $(gpg --list-secret-keys --keyid-format 0xlong | awk 'match($0,/0x/) {id =  substr($0, RSTART+2, 16)}END{print id}')
 git config --global gpg.program $(which gpg)
 
