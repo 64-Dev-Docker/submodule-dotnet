@@ -57,6 +57,7 @@
 		"derivitec-ltd.vscode-dotnet-adapter",
 		// "formulahendry.dotnet-test-explorer", // maybe not at this time
 		"ms-dotnettools.csharp",
+		"ryanluker.vscode-coverage-gutters"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [5000, 5001],
