@@ -2,14 +2,14 @@ version: "3.9"
 services:
   c-sharp:
     build: 
-      context: .devcontainer
+      context: ../.devcontainer
       dockerfile: Dockerfile
       # args: 
       #   VARIANT: buster
       #   INSTALL_NODE: true
       #   NODE_VERSION: lts/*
     volumes: 
-      - .:/workspace:cached
+      - ..:/workspace:cached
       - type: bind
         source: ${HOME}/.ssh
         target: /home/vscode/.ssh
