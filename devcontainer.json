@@ -22,7 +22,7 @@
 	"settings": {
 		// "terminal.integrated.shell.linux": "/usr/bin/zsh",
 		"plantuml.render": "PlantUMLServer",
-		"plantuml.server": "http://plantuml:8081/",
+		"plantuml.server": "http://plantuml:8080/",
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
