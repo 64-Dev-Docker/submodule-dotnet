@@ -39,6 +39,8 @@ COPY custom-scripts/security/* /tmp/library-scripts/
 RUN /bin/bash /tmp/library-scripts/configure-sign.sh "${USERNAME}" \
     && /bin/bash /tmp/library-scripts/configure-cert.sh \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+    
+# RUN chown vscode:vscode --recursive ~ 
 
 # Remove library scripts for final image
 RUN rm -rf /tmp/library-scripts

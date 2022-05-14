@@ -15,13 +15,23 @@ services:
         target: /home/vscode/.ssh
         consistency: cached
       - type: bind
+        source: ${HOME}/.nuget
+        target: /home/vscode/.nuget
+        consistency: cached
+      - type: bind
         source: ${HOME}/.gnupg
         target: /home/vscode/.gnupg
         consistency: cached
     command: /bin/sh -c "while sleep 1000; do :; done"
+  datastore:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
   # plantuml:
   #   # using the jetty server under the belief it is lighter
   #   image: "plantuml/plantuml-server:jetty"
   #   ports:
   #     - "8080:8080"
+
 
