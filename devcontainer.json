@@ -37,12 +37,12 @@
 		"esbenp.prettier-vscode",
 		// "formulahendry.code-runner", // giving us grief
 		"github.vscode-pull-request-github",
-		"hbenl.vscode-test-explorer",
+		// "hbenl.vscode-test-explorer", // testing
 		"hoovercj.vscode-power-mode",
 		"jebbs.plantuml",
 		"mhutchie.git-graph",
 		"ms-azuretools.vscode-docker",
-		"ms-vscode.test-adapter-converter",
+		// "ms-vscode.test-adapter-converter", // testing
 		"mutantdino.resourcemonitor",
 		"redhat.vscode-yaml",
 		"ritwickdey.liveserver",
@@ -54,8 +54,8 @@
 		"shd101wyy.markdown-preview-enhanced",
 		// dotnet
 		"cschlosser.doxdocgen",
-		"derivitec-ltd.vscode-dotnet-adapter",
-		"formulahendry.dotnet-test-explorer",
+		// "derivitec-ltd.vscode-dotnet-adapter", // testing
+		"formulahendry.dotnet-test-explorer", // testing
 		"ms-dotnettools.csharp",
 		"ryanluker.vscode-coverage-gutters",
 		"wghats.vscode-nxunit-test-adapter",
