@@ -1,5 +1,5 @@
-# [Choice] .NET version: 5.0, 3.1, 2.1
-ARG VARIANT=5.0
+# [Choice] .NET version: 6.0, 5.0, 3.1, 6.0-bullseye, 5.0-bullseye, 3.1-bullseye, 6.0-focal, 5.0-focal, 3.1-focal
+ARG VARIANT=6.0-bullseye
 FROM mcr.microsoft.com/vscode/devcontainers/dotnet:0-${VARIANT}
 
 # [Option] Install Node.js
@@ -39,6 +39,8 @@ COPY custom-scripts/security/* /tmp/library-scripts/
 RUN /bin/bash /tmp/library-scripts/configure-sign.sh "${USERNAME}" \
     && /bin/bash /tmp/library-scripts/configure-cert.sh \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+    
+# RUN chown vscode:vscode --recursive ~ 
 
 # Remove library scripts for final image
 RUN rm -rf /tmp/library-scripts
