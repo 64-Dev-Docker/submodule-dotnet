@@ -1,12 +1,13 @@
 {
 	"name": "C# (.NET)",
-	//	"dockerComposeFile": "./docker-compose.yml",
-	//	"service": "c-sharp",
-	//	"workspaceFolder": "/workspace",
 	"runArgs": [
 		"--init",
-		"--privileged"
 	],
+	"overrideCommand": false,
+	// Use this environment variable if you need to bind mount your local source code into a new container.
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+	},
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
@@ -63,7 +64,10 @@
 		// "wghats.vscode-nxunit-test-adapter",
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [5000, 5001],
+	"forwardPorts": [
+		5000,
+		5001
+	],
 	// [Optional] To reuse of your local HTTPS dev cert:
 	//
 	// 1. Export it locally using this command:
@@ -88,9 +92,8 @@
 	//      "mounts": [ "source=${env:HOME}${env:USERPROFILE}/.aspnet/https,target=/home/vscode/.aspnet/https,type=bind" ],
 	"mounts": [
 		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/.gnupg,target=/home/vscode/.gnupg,type=bind,consistency=cached",
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
 	],
-	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "bash ./.devcontainer/custom-scripts/git/configure-git.sh",
 	"postStartCommand": "dotnet restore",
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
