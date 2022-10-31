@@ -26,3 +26,5 @@ cd ..
 rm -rf t
 
 echo "Cleaned up"
+
+dotnet dev-certs https
